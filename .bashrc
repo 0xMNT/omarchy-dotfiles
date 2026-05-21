@@ -11,4 +11,5 @@ source ~/.local/share/omarchy/default/bash/rc
 
 # Dotfiles bare repo management
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotfiles-ui='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 # alias p='python'
