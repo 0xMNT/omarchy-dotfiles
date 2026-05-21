@@ -1,13 +1,63 @@
-# Dotfiles repo gitignore
+# Ignore everything by default
+*
 
-# Omarchy runtime state (machine-generated, not user config)
-.config/omarchy/current/
-.config/omarchy/themed/
-.config/omarchy/branding/
-.config/omarchy/extensions/
+# Unignore dotfiles we explicitly track
+!.bashrc
+!.gitignore
+!.config/
 
-# Machine-specific (configure per-laptop)
-.config/hypr/monitors.conf
+# Ignore all of .config/ by default, then whitelist
+.config/*
 
-# Misc
-.dotfiles/
+# Hyprland
+!.config/hypr/
+.config/hypr/*
+!.config/hypr/*.conf
+
+# Waybar
+!.config/waybar/
+.config/waybar/*
+!.config/waybar/config.jsonc
+!.config/waybar/style.css
+
+# Walker
+!.config/walker/
+.config/walker/*
+!.config/walker/config.toml
+
+# Mako
+!.config/mako/
+.config/mako/*
+!.config/mako/config
+
+# Terminals
+!.config/alacritty/
+.config/alacritty/*
+!.config/alacritty/alacritty.toml
+
+!.config/kitty/
+.config/kitty/*
+!.config/kitty/kitty.conf
+
+!.config/ghostty/
+.config/ghostty/*
+!.config/ghostty/config
+
+# Lazygit
+!.config/lazygit/
+.config/lazygit/*
+!.config/lazygit/config.yml
+
+# Starship
+!.config/starship.toml
+
+# Git
+!.config/git/
+.config/git/*
+!.config/git/config
+
+# Omarchy custom themes and hooks only
+!.config/omarchy/
+.config/omarchy/*
+!.config/omarchy/themes/
+!.config/omarchy/hooks/
