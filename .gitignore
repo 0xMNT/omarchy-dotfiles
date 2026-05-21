@@ -2,6 +2,7 @@
 *
 
 # Unignore dotfiles we explicitly track
+!README.md
 !.bashrc
 !.gitignore
 !.config/
