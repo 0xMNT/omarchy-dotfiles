@@ -60,4 +60,14 @@
 !.config/omarchy/
 .config/omarchy/*
 !.config/omarchy/themes/
+.config/omarchy/themes/*
+!.config/omarchy/themes/*/
+.config/omarchy/themes/*/*
+!.config/omarchy/themes/*/*.toml
+!.config/omarchy/themes/*/*.png
+!.config/omarchy/themes/*/*.jpg
+!.config/omarchy/themes/*/backgrounds/
+!.config/omarchy/themes/*/backgrounds/*
 !.config/omarchy/hooks/
+.config/omarchy/hooks/*
+!.config/omarchy/hooks/*
