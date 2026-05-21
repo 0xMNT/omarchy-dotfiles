@@ -1,0 +1,13 @@
+# Dotfiles repo gitignore
+
+# Omarchy runtime state (machine-generated, not user config)
+.config/omarchy/current/
+.config/omarchy/themed/
+.config/omarchy/branding/
+.config/omarchy/extensions/
+
+# Machine-specific (configure per-laptop)
+.config/hypr/monitors.conf
+
+# Misc
+.dotfiles/
