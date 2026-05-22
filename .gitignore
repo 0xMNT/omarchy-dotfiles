@@ -21,7 +21,6 @@
 
 # App session/cache data
 .config/spotify/
-.config/tmux/
 
 # Runtime dbus socket info (machine-specific hash in filename)
 .config/fcitx/dbus/
