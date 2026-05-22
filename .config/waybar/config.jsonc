@@ -55,7 +55,7 @@
 
   "cpu": {
     "interval": 5,
-    "format": "󰍛",
+    "format": "",
     "on-click": "omarchy-launch-or-focus-tui btop",
     "on-click-right": "alacritty"
   },
