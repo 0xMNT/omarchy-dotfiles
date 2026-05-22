@@ -7,68 +7,26 @@
 !.gitignore
 !.config/
 
-# Ignore all of .config/ by default, then whitelist
-.config/*
+# Track everything in .config
+!.config/*/
+!.config/**
 
-# Hyprland
-!.config/hypr/
-.config/hypr/*
-!.config/hypr/*.conf
+# Private browser profiles (passwords, cookies, session data)
+.config/mozilla/
+.config/chromium/
 
-# Waybar
-!.config/waybar/
-.config/waybar/*
-!.config/waybar/config.jsonc
-!.config/waybar/style.css
+# Binary/runtime data (machine-specific, not portable)
+.config/dconf/
+.config/pulse/
 
-# Walker
-!.config/walker/
-.config/walker/*
-!.config/walker/config.toml
+# App session/cache data
+.config/spotify/
 
-# Mako
-!.config/mako/
-.config/mako/*
-!.config/mako/config
+# Runtime dbus socket info (machine-specific hash in filename)
+.config/fcitx/dbus/
+.config/ibus/bus/
 
-# Terminals
-!.config/alacritty/
-.config/alacritty/*
-!.config/alacritty/alacritty.toml
-
-!.config/kitty/
-.config/kitty/*
-!.config/kitty/kitty.conf
-
-!.config/ghostty/
-.config/ghostty/*
-!.config/ghostty/config
-
-# Lazygit
-!.config/lazygit/
-.config/lazygit/*
-!.config/lazygit/config.yml
-
-# Starship
-!.config/starship.toml
-
-# Git
-!.config/git/
-.config/git/*
-!.config/git/config
-
-# Omarchy custom themes and hooks only
-!.config/omarchy/
-.config/omarchy/*
-!.config/omarchy/themes/
-.config/omarchy/themes/*
-!.config/omarchy/themes/*/
-.config/omarchy/themes/*/*
-!.config/omarchy/themes/*/*.toml
-!.config/omarchy/themes/*/*.png
-!.config/omarchy/themes/*/*.jpg
-!.config/omarchy/themes/*/backgrounds/
-!.config/omarchy/themes/*/backgrounds/*
-!.config/omarchy/hooks/
-.config/omarchy/hooks/*
-!.config/omarchy/hooks/*
+# Cached/generated data (recreated at runtime or by omarchy)
+.config/fcitx5/conf/cached_layouts
+.config/omarchy/backgrounds/
+.config/omarchy/current/
