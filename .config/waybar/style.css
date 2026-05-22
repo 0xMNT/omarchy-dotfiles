@@ -1,7 +1,7 @@
 @import "../omarchy/current/theme/waybar.css";
 
 * {
-  background-color: @background;
+  /* background-color: @background; */
   color: #ffffff;
 
   border: none;
@@ -11,19 +11,48 @@
   font-size: 14px;
 }
 
+#workspaces {
+    padding: 1px;
+}
+
+#workspaces button {
+    color: #ffffff;
+    background: transparent;
+    padding: 5px;
+    margin: 2px;
+    border-radius: 4px;
+}
+
+
+#workspaces button.active,
+#workspaces button.focused {
+  color: #3c3f4a;
+    background-color: #3c3f4a;
+    box-shadow: none;
+    border: none;
+}
+
+#workspaces button:hover {
+    /* background: #285577; */
+    border-color: #fff;
+}
+
+window#waybar {
+    background: #0D101B;
+    color: #ffffff;
+}
+
+#window {
+    font-weight: bold;
+}
+
+
 .modules-left {
   margin-left: 8px;
 }
 
 .modules-right {
   margin-right: 8px;
-}
-
-#workspaces button {
-  all: initial;
-  padding: 0 6px;
-  margin: 0 1.5px;
-  min-width: 9px;
 }
 
 #workspaces button.empty {
