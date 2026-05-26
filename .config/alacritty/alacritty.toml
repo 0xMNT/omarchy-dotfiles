@@ -12,6 +12,9 @@ bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
 italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
 size = 11
 
+[colors.primary]
+foreground = "#e8eaf0"
+
 [window]
 padding.x = 14
 padding.y = 14
