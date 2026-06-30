@@ -7,6 +7,8 @@
 # All the default Omarchy aliases and functions
 # (don't mess with these directly, just overwrite them here!)
 source ~/.local/share/omarchy/default/bash/rc
+source /usr/share/fzf/key-bindings.bash
+source /usr/share/fzf/completion.bash
 
 # Auto-start tmux if not already inside a tmux session
 if command -v tmux &>/dev/null && [ -z "$TMUX" ]; then
@@ -18,6 +20,7 @@ export EDITOR="nvim"
 
 # Make an alias for invoking commands you use constantly
 alias vim="nvim"
+alias sd="shutdown now"
 
 # Dotfiles bare repo management
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -27,4 +30,8 @@ alias dotfiles-ui='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 ble-face -s auto_complete fg=242
 bleopt highlight_syntax=
 
-[[ ${BLE_VERSION-} ]] && ble-attach
+
+if [[ ${BLE_VERSION-} ]]; then
+  bleopt complete_auto_history=1
+  ble-attach
+fi
