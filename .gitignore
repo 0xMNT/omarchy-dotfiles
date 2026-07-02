@@ -6,6 +6,9 @@
 !.bashrc
 !.gitignore
 !.config/
+!.local/
+!.local/bin/
+!.local/bin/*
 
 # Track everything in .config
 !.config/*/
