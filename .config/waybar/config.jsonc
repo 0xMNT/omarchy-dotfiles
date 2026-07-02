@@ -38,14 +38,11 @@
       "9": "9",
       "10": "0"
       // "active": "󱓻"
+    },
+    "persistent-workspaces": {
+      "HDMI-A-1": [1, 2, 3, 4, 5],
+      "eDP-1": [6, 7, 8, 9, 10]
     }
-    // "persistent-workspaces": {
-    //   "1": [],
-    //   "2": [],
-    //   "3": [],
-    //   "4": [],
-    //   "5": []
-    // }
   },
   "custom/omarchy": {
     "format": "<span font='omarchy'>\ue900</span>",

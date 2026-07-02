@@ -17,10 +17,14 @@ fi
 
 # Add your own exports, aliases, and functions here.
 export EDITOR="nvim"
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # Make an alias for invoking commands you use constantly
 alias vim="nvim"
 alias sd="shutdown now"
+alias k="kubectl"
+alias kc="kubectx"
+alias ns="kubens"
 
 # Dotfiles bare repo management
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -35,3 +39,4 @@ if [[ ${BLE_VERSION-} ]]; then
   bleopt complete_auto_history=1
   ble-attach
 fi
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
