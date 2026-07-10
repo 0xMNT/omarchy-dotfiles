@@ -12,8 +12,13 @@ source /usr/share/fzf/completion.bash
 
 # Auto-start tmux if not already inside a tmux session
 if command -v tmux &>/dev/null && [ -z "$TMUX" ]; then
-  exec tmux new-session -A -s main
+  tmux new-session -A -s main
 fi
+
+# auto_complete
+_kc="$HOME/.kube/completion.bash"
+[[ -f "$_kc" ]] || kubectl completion bash >"$_kc"
+source "$_kc"
 
 # Add your own exports, aliases, and functions here.
 export EDITOR="nvim"
@@ -24,7 +29,10 @@ alias vim="nvim"
 alias sd="shutdown now"
 alias k="kubectl"
 alias kc="kubectx"
+complete -F __start_kubectl k
 alias ns="kubens"
+alias lg="lazygit"
+alias pd="kubectl get pods --all-namespaces --no-headers | grep -vE 'Running|Completed' | wc -l"
 
 # Dotfiles bare repo management
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -34,6 +42,7 @@ alias dotfiles-ui='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 ble-face -s auto_complete fg=242
 bleopt highlight_syntax=
 
+eval "$(direnv hook bash)"
 
 if [[ ${BLE_VERSION-} ]]; then
   bleopt complete_auto_history=1
