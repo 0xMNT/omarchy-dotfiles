@@ -26,13 +26,14 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # Make an alias for invoking commands you use constantly
 alias vim="nvim"
-alias sd="shutdown now"
+alias sd='pkill -SIGKILL -f google-chrome; sleep 1; python3 -c "import json,os; p=os.path.expanduser(\"~/.config/google-chrome/Default/Preferences\"); d=json.load(open(p)); d.setdefault(\"profile\",{})[\"exit_type\"]=\"Normal\"; d[\"profile\"][\"exited_cleanly\"]=True; json.dump(d,open(p,\"w\"))" 2>/dev/null; shutdown now'
+alias rb='pkill -SIGKILL -f google-chrome; sleep 1; python3 -c "import json,os; p=os.path.expanduser(\"~/.config/google-chrome/Default/Preferences\"); d=json.load(open(p)); d.setdefault(\"profile\",{})[\"exit_type\"]=\"Normal\"; d[\"profile\"][\"exited_cleanly\"]=True; json.dump(d,open(p,\"w\"))" 2>/dev/null; systemctl reboot'
 alias k="kubectl"
 alias kc="kubectx"
 complete -F __start_kubectl k
 alias ns="kubens"
 alias lg="lazygit"
-alias pd="kubectl get pods --all-namespaces --no-headers | grep -vE 'Running|Completed' | wc -l"
+alias pd="kubectl get pods --all-namespaces --no-headers | grep -vE 'Running|Completed'"
 
 # Dotfiles bare repo management
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
