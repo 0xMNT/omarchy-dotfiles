@@ -3,6 +3,7 @@
 
 # Unignore dotfiles we explicitly track
 !README.md
+!CLAUDE.md
 !.bashrc
 !.gitignore
 !.config/
