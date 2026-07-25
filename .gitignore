@@ -15,8 +15,10 @@
 !.config/*/
 !.config/**
 
-# Machine-specific git identity (not synced)
+# Machine-specific overrides (not synced)
 .config/git/config.local
+.config/hypr/monitors-local.conf
+.config/waybar/style.local.css
 
 # Private browser profiles (passwords, cookies, session data)
 .config/mozilla/
