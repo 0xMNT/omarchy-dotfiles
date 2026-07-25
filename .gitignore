@@ -18,6 +18,7 @@
 # Machine-specific overrides (not synced)
 .config/git/config.local
 .config/hypr/monitors-local.conf
+.config/hypr/input-local.conf
 .config/waybar/style.local.css
 
 # Private browser profiles (passwords, cookies, session data)
