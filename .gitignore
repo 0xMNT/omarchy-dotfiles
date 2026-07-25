@@ -15,6 +15,9 @@
 !.config/*/
 !.config/**
 
+# Machine-specific git identity (not synced)
+.config/git/config.local
+
 # Private browser profiles (passwords, cookies, session data)
 .config/mozilla/
 .config/chromium/
