@@ -1,9 +1,6 @@
 # If not running interactively, don't do anything (leave this at the top of this file)
 [[ $- != *i* ]] && return
 
-# ble.sh - bash line editor with autosuggestions (load at top, configure below)
-[[ $- == *i* ]] && source ~/.local/share/blesh/ble.sh --noattach
-
 # All the default Omarchy aliases and functions
 # (don't mess with these directly, just overwrite them here!)
 source ~/.local/share/omarchy/default/bash/rc
@@ -17,8 +14,10 @@ fi
 
 # auto_complete
 _kc="$HOME/.kube/completion.bash"
-[[ -f "$_kc" ]] || kubectl completion bash >"$_kc"
-source "$_kc"
+if command -v kubectl &>/dev/null; then
+  [[ -f "$_kc" ]] || kubectl completion bash >"$_kc"
+  [[ -f "$_kc" ]] && source "$_kc"
+fi
 
 # Add your own exports, aliases, and functions here.
 export EDITOR="nvim"
@@ -39,14 +38,5 @@ alias pd="kubectl get pods --all-namespaces --no-headers | grep -vE 'Running|Com
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dotfiles-ui='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-# ble.sh autosuggestion color (equivalent to ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=242")
-ble-face -s auto_complete fg=242
-bleopt highlight_syntax=
-
 eval "$(direnv hook bash)"
-
-if [[ ${BLE_VERSION-} ]]; then
-  bleopt complete_auto_history=1
-  ble-attach
-fi
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
