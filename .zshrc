@@ -44,7 +44,7 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 
 # Auto-start tmux if not already inside a tmux session
 if command -v tmux &>/dev/null && [ -z "$TMUX" ]; then
-  tmux new-session -A -s main
+  tmux attach || tmux new-session
 fi
 
 # kubectl completion
